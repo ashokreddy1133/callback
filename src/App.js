@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import Login from './components/Login/Login';
+import { useState } from 'react';
 
 function App() {
+  const [themeType, setThemeType] = useState('dark')
+  const lightTheme = createTheme({
+    palette: {
+      mode: 'light'
+    },
+    shape: {
+      borderRadius: 8
+    }
+  })
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark'
+    },
+    shape: {
+      borderRadius: 8
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={themeType === 'light' ? lightTheme: darkTheme}>
+<CssBaseline />
+<Login />
+    </ThemeProvider>
   );
 }
 
