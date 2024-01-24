@@ -9,7 +9,7 @@ const Login = () => {
     console.log(isDarkTheme)
   return (
     <Grid container>
-        <Grid item md = {6} lg = {8} component={Box} sx = {{backgroundColor: isDarkTheme ? 'inherit': '#fbfcfb'}}>
+        <Grid item md = {6} lg = {8} component={Box} sx = {{backgroundColor: isDarkTheme ? '#100f0f': '#fbfcfb'}}>
             <Stack sx={{height: '100vh', alignItems: 'center', justifyContent: 'center', padding: '16px'}} spacing={4}>
                 {/* {
 isDarkTheme && <Box component={'img'} src={darkImage} sx = {{width: 1/1.5, height: '70vh',objectFit: 'cover'}}/>
